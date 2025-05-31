@@ -1,6 +1,8 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
+import svgr from 'vite-plugin-svgr';
 
+import tailwindcss from '@tailwindcss/vite';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react-swc';
 
@@ -28,7 +30,9 @@ export default defineConfig(({ mode }) => {
         routesDirectory: './src/pages',
         generatedRouteTree: './src/app/providers/routeTree.gen.ts',
       }),
+      tailwindcss(),
       react(),
+      svgr({ include: '**/*.svg?react' }),
     ],
     resolve: {
       alias: {

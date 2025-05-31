@@ -54,6 +54,7 @@ export default [
             'Нельзя использовать import.meta.env напрямую. Импортируй значения из @env.',
         },
       ],
+      'sonarjs/todo-tag': ['warn'],
     },
   },
   {
